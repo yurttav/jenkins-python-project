@@ -12,7 +12,6 @@ pipeline{
             agent {
                 docker {
                     image 'python:alpine'
-                    label 'docker'
                 }
             }
             steps{
