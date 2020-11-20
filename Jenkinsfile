@@ -18,6 +18,7 @@ pipeline{
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'pip install -r requirements.txt'
                     sh 'python -m py_compile src/*.py'
+                    sh 'python src/app.py'
                     stash(name: 'compilation_result', includes: 'src/*.py*')
                 }   
             }
