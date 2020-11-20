@@ -10,9 +10,9 @@ pipeline{
     stages{
         stage("compile"){
             agent {
-                node {label 'myapp'}
                 docker {
                     image 'python:alpine'
+                    label 'docker'
                 }
             }
             steps{
